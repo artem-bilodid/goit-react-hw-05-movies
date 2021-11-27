@@ -1,5 +1,4 @@
 import Card from '../Card';
-import s from './Cast.module.scss';
 import { useState, useEffect, useCallback } from 'react';
 import { fetchCastInfo } from '../../js/api/movies-api';
 import CharacterCardList from './../CharacterCardList';

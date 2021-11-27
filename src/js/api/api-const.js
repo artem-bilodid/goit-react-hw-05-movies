@@ -4,7 +4,8 @@ const API_CONST = {
   MOVIE_ENDPOINT: 'movie',
   TRENDING_ENDPOINT: 'trending/movie/day',
   SEARCH_ENDPOINT: 'search/movie',
-  CAST_ENDPOINT: '/movie/{movie_id}/credits',
+  CAST_ENDPOINT: 'movie/{movie_id}/credits',
+  REVIEWS_ENDPOINT: 'movie/{movie_id}/reviews',
 };
 
 export default API_CONST;

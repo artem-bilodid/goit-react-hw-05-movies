@@ -8,6 +8,7 @@ import Container from '../../components/Container';
 import MovieDetailsContent from '../../components/MovieDetailsContent/MovieDetailsContent';
 import AdditionalInformation from './../../components/AdditionalInformation';
 import Cast from './../../components/Cast';
+import Reviews from '../../components/Reviews';
 
 const MovieDetails = props => {
   const { movieId } = useParams();
@@ -35,7 +36,7 @@ const MovieDetails = props => {
         <AdditionalInformation />
         <Routes>
           <Route path="cast" element={<Cast movieId={movieId} />} />
-          <Route path="reviews" element={<div>reviews</div>} />
+          <Route path="reviews" element={<Reviews movieId={movieId} />} />
         </Routes>
       </Container>
     </main>

@@ -1,5 +1,5 @@
 import s from './AdditionalInformation.module.scss';
-import { Link, useLocation, NavLink } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 
 const AdditionalInformation = props => {
   const location = useLocation();

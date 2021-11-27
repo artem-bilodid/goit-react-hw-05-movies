@@ -1,7 +1,14 @@
 import API_CONST from './api-const';
 
-const { API_KEY, BASE_URL, TRENDING_ENDPOINT, SEARCH_ENDPOINT, MOVIE_ENDPOINT, CAST_ENDPOINT } =
-  API_CONST;
+const {
+  API_KEY,
+  BASE_URL,
+  TRENDING_ENDPOINT,
+  SEARCH_ENDPOINT,
+  MOVIE_ENDPOINT,
+  CAST_ENDPOINT,
+  REVIEWS_ENDPOINT,
+} = API_CONST;
 
 export const fetchTrendingMovies = async () => {
   try {
@@ -35,4 +42,13 @@ export const fetchCastInfo = async movieId => {
   const data = await response.json();
 
   return data.cast;
+};
+
+export const fetchReviews = async movieId => {
+  const transformedReviewsEndpoint = REVIEWS_ENDPOINT.replace('{movie_id}', movieId);
+
+  const response = await fetch(`${BASE_URL}/${transformedReviewsEndpoint}?api_key=${API_KEY}`);
+  const data = await response.json();
+
+  return data.results;
 };

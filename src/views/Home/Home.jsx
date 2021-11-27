@@ -1,4 +1,3 @@
-import s from './Home.module.scss';
 import { fetchTrendingMovies } from '../../js/api/movies-api';
 import Container from './../../components/Container';
 import Card from '../../components/Card';

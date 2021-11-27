@@ -1,12 +1,15 @@
-import s from './App.module.scss';
 import { Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 
 import Header from './../Header';
 import Container from './../Container';
 import Navigation from './../Navigation';
-import Home from './../../views/Home';
-import Movies from './../../views/Movies';
-import MovieDetails from './../../views/MovieDetails';
+
+const Home = lazy(() => import(/* webpackChunkName: "home" */ '../../views/Home'));
+const Movies = lazy(() => import(/* webpackChunkName: "movies" */ '../../views/Movies'));
+const MovieDetails = lazy(() =>
+  import(/* webpackChunkName: "movie-details" */ '../../views/MovieDetails'),
+);
 
 const App = () => {
   return (
@@ -16,11 +19,13 @@ const App = () => {
           <Navigation />
         </Container>
       </Header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId/*" element={<MovieDetails />} />
-      </Routes>
+      <Suspense fallback={<Container>...</Container>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId/*" element={<MovieDetails />} />
+        </Routes>
+      </Suspense>
     </>
   );
 };

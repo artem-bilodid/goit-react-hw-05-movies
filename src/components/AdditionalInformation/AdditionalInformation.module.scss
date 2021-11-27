@@ -1,0 +1,16 @@
+@import '../../styles/shared/colors';
+
+.link {
+  color: color('primary');
+  text-decoration: none;
+  transition: color 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  &:hover,
+  &:focus {
+    color: color('accent');
+  }
+}
+.active {
+  @extend .link;
+  color: color('accent');
+}

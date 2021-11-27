@@ -1,0 +1,25 @@
+@import '../../styles/shared/colors';
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardList {
+  list-style: none;
+
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2rem 1rem;
+}
+.imageBox {
+  width: 12rem;
+}
+.cardImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}

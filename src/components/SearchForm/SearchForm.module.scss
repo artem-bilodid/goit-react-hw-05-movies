@@ -1,0 +1,11 @@
+@import '../../styles/shared/colors';
+
+.searchForm {
+  display: flex;
+  gap: 1rem;
+}
+
+.input {
+  max-width: 24rem;
+  flex-grow: 2;
+}

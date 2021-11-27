@@ -1,0 +1,21 @@
+@import '../../styles/shared/colors';
+
+.backButton {
+  width: 8rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+
+  cursor: pointer;
+  text-decoration: none;
+  background-color: color('foreground');
+  color: color('secondary');
+  // outline: none;
+  border: none;
+
+  &:hover {
+    color: color('accent');
+  }
+}
